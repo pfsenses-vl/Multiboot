@@ -1,3 +1,6 @@
+########################################
+#Update script for Kaspersky Rescue Disk
+########################################
 $ErrorActionPreference = "SilentlyContinue"
 $USB=Get-Disk -UniqueId "*USB*" | Get-Partition | Get-Volume
 $USB=$USB.DriveLetter
