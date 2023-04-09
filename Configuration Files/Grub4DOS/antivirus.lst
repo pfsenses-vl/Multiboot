@@ -1,0 +1,30 @@
+timeout 600
+gfxmenu /Boot/Configs/G4D/Image
+default 0
+
+title   .. 
+configfile (hd0,0)/boot/Configs/G4D/menu.lst
+
+title Kaspersky Rescue Disk 10
+set ISO=/Boot/Images/SharedImages/Antivirus/KRD/KRD.iso
+partnew (hd0,3) 0x00 %ISO%
+map %ISO% (0xff) 
+map --hook
+root (0xff) || rootnoverify (0xff)
+chainloader (0xff)
+
+title Dr. Web Rescue USB 
+set ISO=/Boot/Images/SharedImages/Antivirus/DRWEB/DRWEB.iso
+partnew (hd0,3) 0x00 %ISO%
+map %ISO% (0xff) 
+map --hook
+root (0xff) || rootnoverify (0xff)
+chainloader (0xff)
+
+title Eset System Rescue Disk 
+set ISO=/Boot/Images/SharedImages/Antivirus/ESET/ESET.iso
+partnew (hd0,3) 0x00 %ISO%
+map %ISO% (0xff)
+map --hook
+root (0xff) || rootnoverify (0xff)
+chainloader (0xff)
